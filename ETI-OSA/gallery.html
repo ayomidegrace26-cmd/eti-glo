@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Eti-Osa Carnival 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#113521',
+                            gold: '#D2A143',
+                            cream: '#FCF9F2',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+<link rel="icon" type="image/png" href="eti-osa.png">
+</head>
+<body class="antialiased text-brand-green bg-brand-cream">
+
+    <!-- Header Section -->
+    <header class="bg-brand-green px-8 py-7 border-b border-white/10 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="eti-osa.png" alt="Eti-Osa Logo" class="w-11 h-11 rounded-full object-contain border border-brand-gold transition-transform group-hover:scale-105">
+            <span class="text-[26px] font-black tracking-wide text-brand-cream font-serif uppercase">ETI-OSA</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-9">
+            <a href="index.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Home</a>
+            <a href="events.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Events & Tickets</a>
+            <a href="carnival_bands.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Carnival Bands</a>
+            <a href="vendors.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Vendors</a>
+            <a href="gallery.html" class="font-sans text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold">Gallery</a>
+            <a href="sponsorship.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Sponsorship</a>
+            <a href="about.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">About</a>
+        </nav>
+
+        <!-- CTA Button & Mobile Toggle -->
+        <div class="flex items-center gap-4">
+            <a href="events.html"
+                class="hidden md:inline-block bg-brand-gold text-brand-green text-[13px] font-bold tracking-wide px-8 py-3 rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_25px_rgba(210,161,67,0.35)]">
+                Get Tickets
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden text-brand-gold hover:text-white transition-colors p-2 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-brand-green/98 backdrop-blur-md z-[100] hidden flex-col items-center justify-center transition-opacity">
+        <button id="closeMenuBtn" class="absolute top-8 right-8 text-brand-gold hover:text-white p-2 focus:outline-none">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <nav class="flex flex-col items-center gap-6">
+            <a href="index.html"
+                class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-brand-gold transition-colors">Home</a>
+            <a href="events.html"
+                class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-brand-gold transition-colors">Events
+                & Tickets</a>
+            <a href="carnival_bands.html"
+                class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-brand-gold transition-colors">Carnival
+                Bands</a>
+            <a href="vendors.html"
+                class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-brand-gold transition-colors">Vendors</a>
+            <a href="gallery.html" class="font-sans text-[17px] font-bold uppercase tracking-[0.15em] text-brand-gold">Gallery</a>
+            <a href="sponsorship.html"
+                class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-brand-gold transition-colors">Sponsorship</a>
+            <a href="about.html"
+                class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-brand-gold transition-colors">About</a>
+        </nav>
+        <div class="mt-12">
+            <a href="events.html"
+                class="bg-brand-gold text-brand-green text-[13px] font-bold tracking-wide px-10 py-3.5 rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_25px_rgba(210,161,67,0.35)]">
+                Get Tickets
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-brand-green pt-24 pb-20 px-4 text-center">
+        <h1 class="font-serif font-black text-3xl md:text-6xl lg:text-[72px] leading-tight mb-4 tracking-tight">
+            <span class="text-white">Gallery —</span> <span class="text-brand-gold">Moments from<br>Eti-Osa</span>
+        </h1>
+        <p class="font-serif italic text-xl md:text-2xl text-white/90 tracking-wide mt-6">
+            A living record of the Carnival's story
+        </p>
+    </section>
+
+    <!-- Filter Bar Section -->
+    <section class="bg-brand-cream py-10 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 filter-container">
+                <button data-filter="all" class="filter-btn active bg-brand-gold text-brand-green px-6 py-2.5 rounded-full font-sans font-bold text-[11px] uppercase tracking-widest shadow-md transition-all hover:scale-105 border border-brand-gold">ALL</button>
+                <button data-filter="durbar" class="filter-btn border border-brand-green text-brand-green px-6 py-2.5 rounded-full font-sans font-bold text-[11px] uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream transition-all">ROYAL DURBAR</button>
+                <button data-filter="parades" class="filter-btn border border-brand-green text-brand-green px-6 py-2.5 rounded-full font-sans font-bold text-[11px] uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream transition-all">PARADES</button>
+                <button data-filter="concerts" class="filter-btn border border-brand-green text-brand-green px-6 py-2.5 rounded-full font-sans font-bold text-[11px] uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream transition-all">CONCERTS</button>
+                <button data-filter="village" class="filter-btn border border-brand-green text-brand-green px-6 py-2.5 rounded-full font-sans font-bold text-[11px] uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream transition-all">CULTURAL VILLAGE</button>
+                <button data-filter="waterfront" class="filter-btn border border-brand-green text-brand-green px-6 py-2.5 rounded-full font-sans font-bold text-[11px] uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream transition-all">WATERFRONT</button>
+                <button data-filter="community" class="filter-btn border border-brand-green text-brand-green px-6 py-2.5 rounded-full font-sans font-bold text-[11px] uppercase tracking-widest hover:bg-brand-green hover:text-brand-cream transition-all">COMMUNITY</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Grid Section -->
+    <section class="bg-brand-cream pb-24">
+        <div class="container mx-auto px-6 max-w-[1000px]">
+            <div id="photo-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo 1 -->
+                <div class="gallery-item parades aspect-square rounded-[16px] overflow-hidden shadow-lg group" data-category="parades">
+                    <img src="https://picsum.photos/seed/eti1/800/800" alt="Carnival Parade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Photo 2 -->
+                <div class="gallery-item concerts aspect-square rounded-[16px] overflow-hidden shadow-lg group" data-category="concerts">
+                    <img src="https://picsum.photos/seed/eti2/800/800" alt="Carnival Concert" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Photo 3 -->
+                <div class="gallery-item waterfront aspect-square rounded-[16px] overflow-hidden shadow-lg group" data-category="waterfront">
+                    <img src="https://picsum.photos/seed/eti3/800/800" alt="Waterfront Event" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Photo 4 -->
+                <div class="gallery-item durbar aspect-square rounded-[16px] overflow-hidden shadow-lg group" data-category="durbar">
+                    <img src="https://picsum.photos/seed/eti4/800/800" alt="Royal Durbar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Photo 5 -->
+                <div class="gallery-item village aspect-square rounded-[16px] overflow-hidden shadow-lg group" data-category="village">
+                    <img src="https://picsum.photos/seed/eti5/800/800" alt="Cultural Village Market" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Photo 6 -->
+                <div class="gallery-item community aspect-square rounded-[16px] overflow-hidden shadow-lg group" data-category="community">
+                    <img src="https://picsum.photos/seed/eti6/800/800" alt="Community Interaction" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="mt-14 flex justify-center">
+                <button id="load-more-btn" class="border border-brand-green text-brand-green font-sans font-bold text-[13px] px-8 py-3 rounded-full hover:bg-brand-green hover:text-brand-cream transition-colors">
+                    Load More Moments
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="bg-brand-green py-24 pb-32">
+        <div class="container mx-auto px-6 max-w-[1000px]">
+            <div class="text-center mb-14">
+                <h2 class="font-serif font-black text-[42px] text-brand-gold mb-3">Watch the Carnival Come Alive</h2>
+                <p class="font-sans text-white/90 text-[15px]">Experience the energy, the sounds, and the rhythm of Eti-Osa.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Video 1 -->
+                <a href="https://www.youtube.com" target="_blank" class="bg-[#183a24] rounded-[16px] overflow-hidden shadow-2xl flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                    <div class="relative h-48 w-full">
+                        <img src="https://picsum.photos/seed/eti7/800/800" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full border-[1.5px] border-white/60 flex items-center justify-center bg-black/20 backdrop-blur-[2px] group-hover:bg-brand-gold/20 transition-all">
+                                <div class="w-10 h-10 bg-brand-gold rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-brand-green ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5">
+                        <h3 class="font-sans font-black text-white text-[15px] mb-1">2025 Highlights Reel</h3>
+                        <p class="font-sans text-white/60 text-[11px] font-semibold uppercase tracking-wider">5:45 - Official Aftermovie</p>
+                    </div>
+                </a>
+
+                <!-- Video 2 -->
+                <a href="https://www.youtube.com" target="_blank" class="bg-[#183a24] rounded-[16px] overflow-hidden shadow-2xl flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                    <div class="relative h-48 w-full">
+                        <img src="https://picsum.photos/seed/eti8/800/800" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full border-[1.5px] border-white/60 flex items-center justify-center bg-black/20 backdrop-blur-[2px] group-hover:bg-brand-gold/20 transition-all">
+                                <div class="w-10 h-10 bg-brand-gold rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-brand-green ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5">
+                        <h3 class="font-sans font-black text-white text-[15px] mb-1">Sounds of Eti-Osa</h3>
+                        <p class="font-sans text-white/60 text-[11px] font-semibold uppercase tracking-wider">12:20 - Documentary Short</p>
+                    </div>
+                </a>
+
+                <!-- Video 3 -->
+                <a href="https://www.youtube.com" target="_blank" class="bg-[#183a24] rounded-[16px] overflow-hidden shadow-2xl flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                    <div class="relative h-48 w-full">
+                        <img src="https://picsum.photos/seed/eti9/800/800" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full border-[1.5px] border-white/60 flex items-center justify-center bg-black/20 backdrop-blur-[2px] group-hover:bg-brand-gold/20 transition-all">
+                                <div class="w-10 h-10 bg-brand-gold rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-brand-green ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 border-t border-white/5">
+                        <h3 class="font-sans font-black text-white text-[15px] mb-1">Voices of the Community</h3>
+                        <p class="font-sans text-white/60 text-[11px] font-semibold uppercase tracking-wider">3:15 - Testimonials</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Upload Section -->
+    <section class="bg-white py-24">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="bg-brand-cream rounded-[32px] p-10 md:p-14 shadow-[0_8px_30px_rgba(0,0,0,0.04)] grid grid-cols-1 md:grid-cols-2 gap-12 items-center border border-brand-green/5">
+                
+                <!-- Left Content -->
+                <div>
+                    <div class="w-14 h-14 rounded-full border-2 border-brand-green flex items-center justify-center mb-6 bg-transparent">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h2 class="font-serif font-black text-4xl text-brand-green mb-4">Were you there?</h2>
+                    <p class="font-sans text-brand-green/80 text-[15px] leading-relaxed max-w-sm">
+                        Share your carnival moments with us. We love seeing the festival through your eyes. Upload your best photos to be featured in our community gallery.
+                    </p>
+                </div>
+
+                <!-- Right Form -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <form class="space-y-4" data-ajax-submit="true" enctype="multipart/form-data">
+                        <input type="hidden" name="form_type" value="gallery">
+                        <!-- Name -->
+                        <div>
+                            <label class="block font-sans font-bold text-[12px] text-brand-green mb-1.5">Name *</label>
+                            <input type="text" name="fullname" required placeholder="Your Name" class="w-full bg-white border border-gray-200 rounded-lg px-4 py-2.5 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                        </div>
+                        
+                        <!-- Email -->
+                        <div>
+                            <label class="block font-sans font-bold text-[12px] text-brand-green mb-1.5">Email *</label>
+                            <input type="email" name="email" required placeholder="your@email.com" class="w-full bg-white border border-gray-200 rounded-lg px-4 py-2.5 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                        </div>
+
+                        <!-- Event Attended -->
+                        <div>
+                            <label class="block font-sans font-bold text-[12px] text-brand-green mb-1.5">Event Attended *</label>
+                            <div class="relative">
+                                <select name="event" required class="w-full bg-white border border-gray-200 rounded-lg px-4 py-2.5 font-sans text-[13px] text-brand-green appearance-none focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                                    <option value="">Select Event</option>
+                                    <option value="Opening Ceremony">Opening Ceremony</option>
+                                    <option value="Grand Parades">Grand Parades</option>
+                                    <option value="Concert Nights">Concert Nights</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                                    <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo Upload -->
+                        <div>
+                            <label class="block font-sans font-bold text-[12px] text-brand-green mb-1.5">Photo Upload (Max 5) *</label>
+                            <div class="border-2 border-dashed border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:border-brand-gold hover:bg-brand-cream/30 transition-colors relative">
+                                <input type="file" name="photos[]" multiple accept="image/*" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <svg class="w-6 h-6 text-brand-gold mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                <span class="font-sans text-[12px] text-gray-500">Click to upload or drag & drop</span>
+                            </div>
+                        </div>
+
+                        <!-- Caption -->
+                        <div>
+                            <label class="block font-sans font-bold text-[12px] text-brand-green mb-1.5">Caption (Optional)</label>
+                            <textarea name="caption" rows="2" placeholder="Tell us about this moment..." class="w-full bg-white border border-gray-200 rounded-lg px-4 py-2.5 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors resize-y"></textarea>
+                        </div>
+
+                        <!-- Small Notice -->
+                        <p class="font-serif italic text-[11px] text-gray-400 leading-relaxed mt-2 mb-4">
+                            By submitting you grant the Eti-Osa Carnival the right to publish your photos across our platforms with photo credit.
+                        </p>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-brand-gold text-brand-green font-sans font-bold text-[14px] py-3 rounded-lg hover:bg-opacity-90 transition-colors shadow-sm">
+                            Submit Photos
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Be the First to Know Section -->
+    <section class="py-24 px-6 md:px-16 lg:px-24 bg-[#0A1F16] text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[#C5A059]/5 blur-[120px] rounded-full scale-150"></div>
+        <div class="container mx-auto relative z-10">
+            <!-- Icon -->
+            <div class="flex justify-center mb-8">
+                <div class="text-[#C5A059]">
+                    <svg viewBox="0 0 24 24" class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Be the First to Know</h2>
+            <p class="text-white/60 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
+                Updates on events, tickets, vendor registration, and band announcements delivered straight to you. Join our prestigious community today.
+            </p>
+
+            <!-- Contact Button -->
+            <div class="flex justify-center">
+                <a href="contact.html" class="bg-[#C5A059] text-[#0A1F16] px-12 py-4 rounded-full text-sm font-black uppercase tracking-widest transition-all duration-300 hover:bg-[#E5C47F] hover:scale-105 shadow-xl shadow-[#C5A059]/10 flex items-center gap-3">
+                    Contact Our Team
+                    <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="bg-[#0A1510] pt-24 pb-12 px-6 md:px-16 lg:px-24 border-t border-white/5">
+        <div class="container mx-auto">
+            <!-- Top Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
+                
+                <!-- Brand & Socials -->
+                <div class="space-y-8">
+                    <div class="flex items-center gap-4">
+                        <img src="eti-osa.png" alt="Eti-Osa Logo" class="w-12 h-12 rounded-full object-contain border-2 border-gold mb-0">
+                        <span class="text-2xl font-black tracking-tight text-white font-serif uppercase">ETI-OSA</span>
+                    </div>
+                    <p class="text-gold italic font-serif text-lg tracking-wide">Culture • Royalty • Heritage</p>
+                    <div class="flex gap-4">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <!-- X (Twitter) -->
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.9-.23-2.74.12-.69.31-1.27.87-1.62 1.54-.34.69-.45 1.5-.23 2.25.13.76.54 1.47 1.13 1.97.63.52 1.43.82 2.24.85 1.01.03 2.05-.33 2.82-1 1.02-.85 1.4-2.3 1.25-3.58-.02-3.95.02-7.89-.01-11.84z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Festival Links -->
+                <div>
+                    <h4 class="text-white text-xs font-black uppercase tracking-[0.3em] mb-8">Festival</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-white/50 text-sm hover:text-gold transition-colors">About Eti-Osa Carnival</a></li>
+                        <li><a href="events.html" class="text-white/50 text-sm hover:text-gold transition-colors">Events & Tickets</a></li>
+                        <li><a href="carnival_bands.html" class="text-white/50 text-sm hover:text-gold transition-colors">Carnival Bands</a></li>
+                        <li><a href="gallery.html" class="text-white/50 text-sm hover:text-gold transition-colors">Gallery & Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Participate Links -->
+                <div>
+                    <h4 class="text-white text-xs font-black uppercase tracking-[0.3em] mb-8">Participate</h4>
+                    <ul class="space-y-4">
+                        <li><a href="vendors.html" class="text-white/50 text-sm hover:text-gold transition-colors">Register as a Vendor</a></li>
+                        <li><a href="carnival_bands.html" class="text-white/50 text-sm hover:text-gold transition-colors">Join a Band</a></li>
+                        <li><a href="sponsorship.html" class="text-white/50 text-sm hover:text-gold transition-colors">Sponsorship Opportunities</a></li>
+                        <li><a href="contact.html" class="text-white/50 text-sm hover:text-gold transition-colors">Volunteer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-xs font-black uppercase tracking-[0.3em] mb-8">Contact</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 group">
+                            <div class="text-gold mt-1 group-hover:scale-110 transition-transform">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <span class="text-white/50 text-sm leading-relaxed">93, CMD ROAD, MAGODO SHANGISHA</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <div class="text-gold group-hover:scale-110 transition-transform">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <a href="mailto:support@etiosacarnival.com" class="text-white/50 text-sm hover:text-gold transition-colors">support@etiosacarnival.com</a>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <div class="text-gold group-hover:scale-110 transition-transform">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <a href="tel:+2349069998112" class="text-white/50 text-sm hover:text-gold transition-colors">+2349069998112</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-white/30 text-[10px] uppercase tracking-widest">&copy; 2026 ETI-OSA CARNIVAL ORGANISING COMMITTEE.</p>
+                <p class="text-white/30 text-[10px] uppercase tracking-widest text-center md:text-right max-w-md">
+                    PRODUCED BY <span class="text-white/50">MYHAVEN INTEGRATED LIMITED</span> IN CO-PRESENTATION WITH THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/form-handler.js"></script>
+    <script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close menu on link click
+        const mobileLinks = mobileMenu?.querySelectorAll('a');
+        mobileLinks?.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Gallery Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-gold', 'text-brand-green', 'shadow-md', 'scale-105');
+                    b.classList.add('border-brand-green', 'text-brand-green');
+                });
+                btn.classList.add('bg-brand-gold', 'text-brand-green', 'shadow-md', 'scale-105');
+                btn.classList.remove('border-brand-green', 'text-brand-green');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Load More Functionality
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const photoGrid = document.getElementById('photo-grid');
+        let loadCount = 1;
+
+        const additionalPhotos = [
+            { id: '10', category: 'village', alt: 'Village Night' },
+            { id: '11', category: 'concerts', alt: 'Stage Lights' },
+            { id: '12', category: 'durbar', alt: 'Horse Procession' },
+            { id: '13', category: 'waterfront', alt: 'Boat Race' },
+            { id: '14', category: 'parades', alt: 'Costume Close-up' },
+            { id: '15', category: 'community', alt: 'Smiling Faces' }
+        ];
+
+        loadMoreBtn.addEventListener('click', () => {
+            loadMoreBtn.innerHTML = '<span class="inline-block animate-spin mr-2">ÃƒÂ¢Ã¢â‚¬Â Ã‚Â»</span> Loading...';
+            
+            setTimeout(() => {
+                additionalPhotos.forEach(photo => {
+                    const div = document.createElement('div');
+                    div.className = `gallery-item ${photo.category} aspect-square rounded-[16px] overflow-hidden shadow-lg group opacity-0 scale-90 transition-all duration-500`;
+                    div.setAttribute('data-category', photo.category);
+                    div.innerHTML = `<img src="https://picsum.photos/seed/eti${photo.id}/800/800" alt="${photo.alt}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">`;
+                    
+                    photoGrid.appendChild(div);
+                    
+                    // Trigger animation
+                    setTimeout(() => {
+                        div.classList.remove('opacity-0', 'scale-90');
+                        div.classList.add('opacity-100', 'scale-100');
+                    }, 50);
+                });
+                
+                loadMoreBtn.innerHTML = 'All Moments Loaded';
+                loadMoreBtn.disabled = true;
+                loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                
+                // Re-run filter check for new items
+                const activeFilter = document.querySelector('.filter-btn.bg-brand-gold').getAttribute('data-filter');
+                if (activeFilter !== 'all') {
+                    document.querySelectorAll('#photo-grid .gallery-item').forEach(item => {
+                        if (item.getAttribute('data-category') !== activeFilter) {
+                            item.classList.add('hidden');
+                        }
+                    });
+                }
+            }, 800);
+        });
+    </script>
+</body>
+</html>

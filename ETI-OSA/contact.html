@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Eti-Osa Carnival 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#113521',
+                            gold: '#D2A143',
+                            cream: '#FCF9F2',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+<link rel="icon" type="image/png" href="eti-osa.png">
+</head>
+<body class="antialiased text-brand-green bg-brand-cream">
+
+    <!-- Header Section -->
+    <header class="bg-brand-green px-8 py-7 border-b border-white/10 flex items-center justify-between relative z-50">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="eti-osa.png" alt="Eti-Osa Logo" class="w-11 h-11 rounded-full object-contain border border-brand-gold transition-transform group-hover:scale-105">
+            <span class="text-[26px] font-black tracking-wide text-brand-cream font-serif uppercase">ETI-OSA</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-4 xl:gap-8">
+            <a href="index.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Home</a>
+            <a href="events.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Events & Tickets</a>
+            <a href="carnival_bands.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Carnival Bands</a>
+            <a href="vendors.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Vendors</a>
+            <a href="gallery.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Gallery</a>
+            <a href="sponsorship.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">Sponsorship</a>
+            <a href="about.html" class="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors">About</a>
+            <a href="contact.html" class="font-sans text-[11px] font-bold uppercase tracking-[0.15em] text-brand-gold">Contact</a>
+        </nav>
+
+        <!-- CTA Button & Mobile Toggle -->
+        <div class="flex items-center gap-4">
+            <a href="events.html" class="hidden md:inline-block bg-brand-gold text-brand-green text-[13px] font-bold tracking-wide px-8 py-3 rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_25px_rgba(210,161,67,0.35)] whitespace-nowrap">
+                Get Tickets
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden text-brand-gold hover:text-white transition-colors p-2 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-brand-green/98 backdrop-blur-md z-[100] hidden flex-col items-center justify-center transition-opacity">
+        <button id="closeMenuBtn" class="absolute top-8 right-8 text-brand-gold hover:text-white p-2 focus:outline-none">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <nav class="flex flex-col items-center gap-6">
+            <a href="index.html" class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white hover:text-brand-gold transition-colors">Home</a>
+            <a href="events.html" class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white hover:text-brand-gold transition-colors">Events & Tickets</a>
+            <a href="carnival_bands.html" class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white hover:text-brand-gold transition-colors">Carnival Bands</a>
+            <a href="vendors.html" class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white hover:text-brand-gold transition-colors">Vendors</a>
+            <a href="gallery.html" class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white hover:text-brand-gold transition-colors">Gallery</a>
+            <a href="sponsorship.html" class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white hover:text-brand-gold transition-colors">Sponsorship</a>
+            <a href="about.html" class="font-sans text-[17px] font-semibold uppercase tracking-[0.15em] text-white hover:text-brand-gold transition-colors">About</a>
+            <a href="contact.html" class="font-sans text-[17px] font-bold uppercase tracking-[0.15em] text-brand-gold">Contact</a>
+            <a href="events.html" class="mt-8 bg-brand-gold text-brand-green text-[14px] font-bold tracking-widest px-10 py-4 rounded-full hover:bg-opacity-90 transition-all uppercase shadow-[0_0_20px_rgba(210,161,67,0.3)]">Get Tickets</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-brand-green pt-24 pb-48 px-4 text-center relative z-0">
+        <h1 class="font-serif font-black text-5xl md:text-6xl lg:text-[72px] leading-tight text-white mb-4">
+            Get in Touch
+        </h1>
+        <p class="font-serif italic text-xl md:text-2xl text-brand-gold tracking-wide">
+            We'd love to hear from you
+        </p>
+    </section>
+
+    <!-- Contact Cards Overlapping Section -->
+    <section class="bg-brand-cream pb-32 relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl -mt-32">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+                
+                <!-- Left Card: Form (Takes up 3 columns) -->
+                <div class="bg-white rounded-[24px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-8 md:p-12 lg:col-span-3">
+                    <h2 class="font-serif font-black text-[28px] text-brand-green mb-8">Send us a Message</h2>
+                    
+                    <form class="space-y-6" data-ajax-submit="true">
+                        <input type="hidden" name="form_type" value="contact">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Full Name -->
+                            <div>
+                                <label class="block font-sans font-bold text-[11px] text-brand-green mb-1.5">Full Name *</label>
+                                <input type="text" name="fullname" required placeholder="Your Name" class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                            </div>
+                            <!-- Email -->
+                            <div>
+                                <label class="block font-sans font-bold text-[11px] text-brand-green mb-1.5">Email Address *</label>
+                                <input type="email" name="email" required placeholder="your@email.com" class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                            </div>
+                            <!-- Phone -->
+                            <div>
+                                <label class="block font-sans font-bold text-[11px] text-brand-green mb-1.5">Phone Number</label>
+                                <input type="tel" name="phone" placeholder="+234 ..." class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                            </div>
+                            <!-- Subject -->
+                            <div>
+                                <label class="block font-sans font-bold text-[11px] text-brand-green mb-1.5">Subject *</label>
+                                <div class="relative">
+                                    <select name="subject" required class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-sans text-[13px] text-brand-green font-bold appearance-none focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors">
+                                        <option value="">Select a subject...</option>
+                                        <option value="Ticketing">Ticketing</option>
+                                        <option value="Sponsorship">Sponsorship</option>
+                                        <option value="Vendor Enquiry">Vendor Enquiry</option>
+                                        <option value="Press / Media">Press / Media</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                                        <svg class="w-5 h-5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label class="block font-sans font-bold text-[11px] text-brand-green mb-1.5">Message *</label>
+                            <textarea name="message" required rows="5" placeholder="How can we help you?" class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors resize-y"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div>
+                            <button type="submit" class="bg-brand-gold text-brand-green font-sans font-bold text-[14px] px-8 py-3.5 rounded-full hover:bg-opacity-90 transition-all shadow-[0_8px_20px_rgba(210,161,67,0.3)] flex items-center gap-2">
+                                Send Message
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Card: Info (Takes up 2 columns) -->
+                <div class="bg-[#11321f] rounded-[24px] shadow-xl p-8 md:p-12 text-white lg:col-span-2 h-full flex flex-col border border-brand-green/20">
+                    <h2 class="font-serif font-black text-[24px] text-brand-gold mb-10">Contact Information</h2>
+                    
+                    <div class="space-y-8 flex-grow">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-[14px] text-white mb-1.5">Address</h4>
+                                <p class="font-sans text-[12.5px] text-white/80 leading-relaxed">
+                                    93, CMD ROAD,<br>
+                                    MAGODO SHANGISHA
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-[14px] text-white mb-1.5">Email</h4>
+                                <p class="font-sans text-[12.5px] text-white/80 leading-relaxed">
+                                    support@etiosacarnival.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-[14px] text-white mb-1.5">Phone</h4>
+                                <p class="font-sans text-[12.5px] text-white/80 leading-relaxed">
+                                    +2349069998112
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Office Hours -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-sans font-bold text-[14px] text-white mb-1.5">Office Hours</h4>
+                                <p class="font-sans text-[12.5px] text-white/80 leading-relaxed">
+                                    Monday - Friday: 9:00 AM - 5:00 PM<br>
+                                    Saturday - Sunday: Closed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider & Social -->
+                    <div class="mt-10 pt-8 border-t border-brand-gold/10">
+                        <h4 class="font-serif font-bold text-[15px] text-brand-gold mb-5">Follow Us</h4>
+                        <div class="flex items-center gap-3">
+                            <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-green transition-all duration-300 transform hover:-translate-y-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-green transition-all duration-300 transform hover:-translate-y-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                            </a>
+                            <a href="https://x.com" target="_blank" class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-green transition-all duration-300 transform hover:-translate-y-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-green transition-all duration-300 transform hover:-translate-y-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 24 24"><path d="M21.582 6.186a2.59 2.59 0 0 0-1.824-1.824C18.147 4 12 4 12 4s-6.147 0-7.758.362a2.59 2.59 0 0 0-1.824 1.824C2 7.797 2 12 2 12s0 4.203.362 5.814a2.59 2.59 0 0 0 1.824 1.824C5.853 20 12 20 12 20s6.147 0 7.758-.362a2.59 2.59 0 0 0 1.824-1.824C22 16.203 22 12 22 12s0-4.203-.362-5.814zM9.91 15.143V8.857L15.362 12l-5.451 3.143z"/></svg>
+                            </a>
+                            <a href="https://tiktok.com" target="_blank" class="w-10 h-10 rounded-full bg-[#1c472d] flex items-center justify-center text-white hover:bg-brand-gold hover:text-brand-green transition-all duration-300 transform hover:-translate-y-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="bg-brand-cream pb-32">
+        <div class="container mx-auto px-6 max-w-[800px]">
+            <div class="text-center mb-16">
+                <h2 class="font-serif font-black text-[38px] md:text-[44px] text-brand-green">
+                    Frequently 
+                    <span class="relative inline-block">
+                        Asked
+                        <div class="absolute -bottom-1 left-0 right-0 h-[2px] bg-brand-gold"></div>
+                    </span>
+                    Questions
+                </h2>
+            </div>
+            
+            <!-- Accordion List -->
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">When is the Eti-Osa Carnival 2026?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        The Eti-Osa Carnival 2026 is scheduled to take place over 14 days in December 2026. Exact dates will be announced shortly. Please subscribe to our newsletter for the latest updates.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">How do I buy tickets?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        Tickets can be purchased directly through our website via the "Events & Tickets" page. We offer various tiers including Standard, VIP, and VVIP access. Early bird tickets will be available soon.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">How do I join a Royal Carnival Band?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        You can apply to join a band by visiting the "Carnival Bands" section of our website. Select your preferred band and fill out the registration form. Note that spaces are limited and registration fees apply.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">How do I register as a vendor?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        Vendor registration is available on the "Vendors" page. We have opportunities for both the Trade Fair and Event Day vending. You will need to submit an application and necessary documentation for approval.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">Is the carnival suitable for children?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        Yes, the Eti-Osa Carnival is a family-friendly event. We have specific days and zones dedicated entirely to children's activities, cultural education, and family entertainment.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 6 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">How do I become a sponsor?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        Please visit our "Sponsorship" page to review our available tiers ranging from Festival Donor to Royal Patron. You can submit an enquiry form there, or contact our partnership team directly via the form on this page.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 7 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">Will there be parking?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        Yes, designated parking areas will be available for attendees. VIP and VVIP ticket holders will have access to premium parking zones. We also highly recommend using our official park-and-ride shuttle services.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 8 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">Is the carnival free?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        The carnival features a mix of free public events (such as the main street parade) and ticketed exclusive events (such as the Royal Banquet and main concerts). Check the event schedule for specific details.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 9 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">How can I volunteer?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        We welcome volunteers! Please select "Volunteer" from the subject dropdown in the contact form above, and tell us a bit about your skills and availability. Our volunteer coordinator will be in touch.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 10 -->
+                <details class="group bg-white border border-gray-100 shadow-[0_4px_15px_rgba(0,0,0,0.02)] rounded-[12px] overflow-hidden transition-all hover:border-brand-gold/50 hover:shadow-md">
+                    <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        <h4 class="font-sans font-semibold text-[14.5px] text-brand-green group-open:text-brand-gold transition-colors">Are there group ticket discounts?</h4>
+                        <svg class="w-5 h-5 text-[#bfa36c] transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-5 pt-1 text-[13.5px] text-gray-600 font-sans leading-relaxed">
+                        Yes, we offer special rates for corporate bookings and large groups (10+ people). Please contact our ticketing team using the form above for a custom quote.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="relative h-[450px] md:h-[500px] w-full bg-gray-200">
+        <!-- Google Map iframe -->
+        <iframe 
+            src="https://maps.google.com/maps?q=93,%20CMD%20ROAD,%20MAGODO%20SHANGISHA&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="absolute inset-0 w-full h-full object-cover">
+        </iframe>
+
+        <!-- Floating Card Overlay -->
+        <div class="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 lg:left-32 z-10">
+            <div class="bg-white rounded-[16px] shadow-[0_15px_40px_rgba(0,0,0,0.12)] p-8 w-[300px] md:w-[340px] relative overflow-hidden">
+                <!-- Gold Top Border Accent -->
+                <div class="absolute top-0 left-0 right-0 h-1.5 bg-brand-gold"></div>
+                
+                <div class="flex items-center gap-4 mb-4 mt-2">
+                    <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center flex-shrink-0 shadow-md">
+                        <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 6l5.5 4L12 4l3.5 6L21 6l-2 10H5zm14 3H5v2h14v-2z"/></svg>
+                    </div>
+                    <h3 class="font-serif font-black text-[22px] text-brand-green">Our Office</h3>
+                </div>
+                <p class="font-sans text-[13.5px] text-gray-600 leading-relaxed mb-6">
+                    93, CMD ROAD, MAGODO SHANGISHA
+                </p>
+                <a href="https://maps.google.com/?q=93,+CMD+ROAD,+MAGODO+SHANGISHA" target="_blank" class="inline-flex items-center gap-2 font-sans font-bold text-[13px] text-brand-gold hover:text-brand-green transition-colors">
+                    Get Directions
+                    <svg class="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="bg-[#0A1510] pt-24 pb-12 px-6 md:px-16 lg:px-24 border-t border-white/5">
+        <div class="container mx-auto">
+            <!-- Top Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
+                
+                <!-- Brand & Socials -->
+                <div class="space-y-8">
+                    <div class="flex items-center gap-4">
+                        <img src="eti-osa.png" alt="Eti-Osa Logo" class="w-12 h-12 rounded-full object-contain border-2 border-gold mb-0">
+                        <span class="text-2xl font-black tracking-tight text-white font-serif uppercase">ETI-OSA</span>
+                    </div>
+                    <p class="text-gold italic font-serif text-lg tracking-wide">Culture • Royalty • Heritage</p>
+                    <div class="flex gap-4">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <!-- X (Twitter) -->
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-gold hover:text-carnival-dark transition-all duration-300">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.9-.23-2.74.12-.69.31-1.27.87-1.62 1.54-.34.69-.45 1.5-.23 2.25.13.76.54 1.47 1.13 1.97.63.52 1.43.82 2.24.85 1.01.03 2.05-.33 2.82-1 1.02-.85 1.4-2.3 1.25-3.58-.02-3.95.02-7.89-.01-11.84z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Festival Links -->
+                <div>
+                    <h4 class="text-white text-xs font-black uppercase tracking-[0.3em] mb-8">Festival</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-white/50 text-sm hover:text-gold transition-colors">About Eti-Osa Carnival</a></li>
+                        <li><a href="events.html" class="text-white/50 text-sm hover:text-gold transition-colors">Events & Tickets</a></li>
+                        <li><a href="carnival_bands.html" class="text-white/50 text-sm hover:text-gold transition-colors">Carnival Bands</a></li>
+                        <li><a href="gallery.html" class="text-white/50 text-sm hover:text-gold transition-colors">Gallery & Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Participate Links -->
+                <div>
+                    <h4 class="text-white text-xs font-black uppercase tracking-[0.3em] mb-8">Participate</h4>
+                    <ul class="space-y-4">
+                        <li><a href="vendors.html" class="text-white/50 text-sm hover:text-gold transition-colors">Register as a Vendor</a></li>
+                        <li><a href="carnival_bands.html" class="text-white/50 text-sm hover:text-gold transition-colors">Join a Band</a></li>
+                        <li><a href="sponsorship.html" class="text-white/50 text-sm hover:text-gold transition-colors">Sponsorship Opportunities</a></li>
+                        <li><a href="contact.html" class="text-white/50 text-sm hover:text-gold transition-colors">Volunteer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-xs font-black uppercase tracking-[0.3em] mb-8">Contact</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 group">
+                            <div class="text-gold mt-1 group-hover:scale-110 transition-transform">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <span class="text-white/50 text-sm leading-relaxed">93, CMD ROAD, MAGODO SHANGISHA</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <div class="text-gold group-hover:scale-110 transition-transform">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <a href="mailto:support@etiosacarnival.com" class="text-white/50 text-sm hover:text-gold transition-colors">support@etiosacarnival.com</a>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <div class="text-gold group-hover:scale-110 transition-transform">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <a href="tel:+2349069998112" class="text-white/50 text-sm hover:text-gold transition-colors">+2349069998112</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-white/30 text-[10px] uppercase tracking-widest">&copy; 2026 ETI-OSA CARNIVAL ORGANISING COMMITTEE.</p>
+                <p class="text-white/30 text-[10px] uppercase tracking-widest text-center md:text-right max-w-md">
+                    PRODUCED BY <span class="text-white/50">MYHAVEN INTEGRATED LIMITED</span> IN CO-PRESENTATION WITH THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.remove('hidden');
+            menu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+        document.getElementById('closeMenuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+</html>
