@@ -36,12 +36,12 @@
 <body class="antialiased text-brand-green bg-brand-cream">
 
     <!-- Header Section -->
-    <header class="bg-brand-green px-8 py-7 border-b border-white/10 flex items-center justify-between">
+    <header class="bg-brand-green px-6 py-6 md:px-16 md:py-7 border-b border-white/10 flex items-center justify-between sticky top-0 z-50">
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3 group">
             <img src="eti-osa.png" alt="Eti-Osa Logo"
-                class="w-11 h-11 rounded-full object-contain border border-brand-gold transition-transform group-hover:scale-105">
-            <span class="text-[26px] font-black tracking-wide text-brand-cream font-serif uppercase">ETI-OSA</span>
+                class="w-10 h-10 md:w-11 md:h-11 rounded-full object-contain border border-brand-gold transition-transform group-hover:scale-105">
+            <span class="text-xl md:text-[26px] font-black tracking-wide text-brand-cream font-serif uppercase">ETI-OSA</span>
         </a>
 
         <!-- Desktop Navigation -->
@@ -65,72 +65,103 @@
         </nav>
 
         <!-- CTA Button -->
-        <a href="events.html"
-            class="bg-brand-gold text-brand-green text-[13px] font-bold tracking-wide px-8 py-3 rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_25px_rgba(210,161,67,0.35)]">
-            Get Tickets
-        </a>
+        <div class="flex items-center gap-4">
+            <a href="events.html"
+                class="hidden sm:inline-flex bg-brand-gold text-brand-green text-[12px] font-bold tracking-wide px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_25px_rgba(210,161,67,0.35)]">
+                Get Tickets
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden text-brand-gold hover:text-white transition-colors p-1.5 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 bg-brand-green/98 backdrop-blur-md z-[100] hidden flex-col items-center justify-center transition-all duration-300 opacity-0">
+        <button id="closeMenuBtn" class="absolute top-8 right-8 text-brand-gold hover:text-white p-2 focus:outline-none">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <nav class="flex flex-col items-center gap-7">
+            <a href="index.html" class="font-sans text-[18px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-brand-gold transition-colors">Home</a>
+            <a href="events.html" class="font-sans text-[18px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-brand-gold transition-colors">Events & Tickets</a>
+            <a href="carnival_bands.html" class="font-sans text-[18px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-brand-gold transition-colors">Carnival Bands</a>
+            <a href="vendors.html" class="font-sans text-[18px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-brand-gold transition-colors">Vendors</a>
+            <a href="gallery.html" class="font-sans text-[18px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-brand-gold transition-colors">Gallery</a>
+            <a href="sponsorship.html" class="font-sans text-[18px] font-bold uppercase tracking-[0.2em] text-brand-gold transition-colors">Sponsorship</a>
+            <a href="about.html" class="font-sans text-[18px] font-bold uppercase tracking-[0.2em] text-white/70 hover:text-brand-gold transition-colors">About</a>
+        </nav>
+        <div class="mt-12">
+            <a href="events.html"
+                class="bg-brand-gold text-brand-green text-[14px] font-bold tracking-widest px-10 py-4 rounded-full hover:bg-opacity-90 transition-all shadow-[0_0_25px_rgba(210,161,67,0.35)]">
+                Get Tickets
+            </a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="bg-brand-green pt-28 pb-48 px-4 text-center relative">
+    <section class="bg-brand-green pt-20 pb-20 md:pt-28 md:pb-48 px-4 text-center relative">
         <div class="max-w-4xl mx-auto z-10 relative">
             <h1
-                class="font-serif font-black text-3xl md:text-6xl lg:text-[76px] leading-[1.1] tracking-tight text-white mb-2">
+                class="font-serif font-black text-3xl sm:text-4xl md:text-6xl lg:text-[76px] leading-[1.2] md:leading-[1.1] tracking-tight text-white mb-2">
                 Partner With the <span class="text-brand-gold">Eti-Osa</span><br>
                 <span class="text-brand-gold">Carnival 2026</span>
             </h1>
-            <p class="font-serif italic text-xl md:text-2xl text-white/90 tracking-wide mt-6">
+            <p class="font-serif italic text-lg md:text-2xl text-white/90 tracking-wide mt-6">
                 Reach Hundreds of Thousands. Celebrate Culture. Build Legacy.
             </p>
         </div>
 
         <!-- Floating Metrics Cards -->
-        <div class="absolute -bottom-24 left-0 right-0 px-6 z-20">
+        <div class="relative md:absolute md:-bottom-24 left-0 right-0 px-6 z-20 mt-12 md:mt-0">
             <div class="container mx-auto max-w-[1100px]">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     <!-- Card 1 -->
                     <div
-                        class="bg-white rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] py-10 px-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-5">
+                        class="bg-white rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] py-7 md:py-10 px-4 md:px-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 md:mb-5">
                             <svg class="w-5 h-5 text-brand-green" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                             </svg>
                         </div>
-                        <h3 class="font-serif font-black text-[30px] text-brand-gold mb-1">100,000+</h3>
-                        <p class="font-sans font-bold text-[10px] text-brand-green uppercase tracking-[0.15em]">Expected
-                            Attendance</p>
+                        <h3 class="font-serif font-black text-[24px] md:text-[30px] text-brand-gold mb-1">100,000+</h3>
+                        <p class="font-sans font-bold text-[9px] md:text-[10px] text-brand-green uppercase tracking-[0.15em]">Expected Attendance</p>
                     </div>
                     <!-- Card 2 -->
                     <div
-                        class="bg-white rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] py-10 px-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-5">
+                        class="bg-white rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] py-7 md:py-10 px-4 md:px-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 md:mb-5">
                             <svg class="w-5 h-5 text-brand-green" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z" />
                             </svg>
                         </div>
-                        <h3 class="font-serif font-black text-[30px] text-brand-gold mb-1">14 Days</h3>
-                        <p class="font-sans font-bold text-[10px] text-brand-green uppercase tracking-[0.15em]">Of
+                        <h3 class="font-serif font-black text-[24px] md:text-[30px] text-brand-gold mb-1">14 Days</h3>
+                        <p class="font-sans font-bold text-[9px] md:text-[10px] text-brand-green uppercase tracking-[0.15em]">Of
                             Programming</p>
                     </div>
                     <!-- Card 3 -->
                     <div
-                        class="bg-white rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] py-10 px-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-5">
+                        class="bg-white rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] py-7 md:py-10 px-4 md:px-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4 md:mb-5">
                             <svg class="w-5 h-5 text-brand-green" viewBox="0 0 24 24" fill="currentColor">
                                 <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                             </svg>
                         </div>
-                        <h3 class="font-serif font-black text-[30px] text-brand-gold mb-1">Global</h3>
-                        <p class="font-sans font-bold text-[10px] text-brand-green uppercase tracking-[0.15em]">Media
-                            Coverage</p>
+                        <h3 class="font-serif font-black text-[24px] md:text-[30px] text-brand-gold mb-1">50+</h3>
+                        <p class="font-sans font-bold text-[9px] md:text-[10px] text-brand-green uppercase tracking-[0.15em]">Bands &
+                            Floats</p>
                     </div>
                     <!-- Card 4 -->
                     <div
-                        class="bg-white rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] py-10 px-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                        <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-5">
                             <svg class="w-5 h-5 text-brand-green" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M5 16L3 6l5.5 4L12 4l3.5 6L21 6l-2 10H5zm14 3H5v2h14v-2z" />
                             </svg>
@@ -145,10 +176,10 @@
     </section>
 
     <!-- Why Sponsor Section -->
-    <section class="bg-brand-cream pt-48 pb-24 relative z-10">
+    <section class="bg-brand-cream pt-24 md:pt-48 pb-24 relative z-10">
         <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-20">
-                <h2 class="font-serif font-black text-[40px] text-brand-green relative inline-block">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="font-serif font-black text-3xl md:text-[40px] text-brand-green relative inline-block">
                     Why Sponsor?
                     <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-brand-green"></div>
                 </h2>
@@ -202,15 +233,15 @@
     <!-- Sponsorship Tiers Section -->
     <section class="bg-brand-green py-24 pb-32">
         <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="font-serif font-black text-[42px] text-brand-gold mb-3">Sponsorship Tiers</h2>
-                <p class="font-sans text-white/90 text-[15px]">Choose the level of partnership that aligns with your
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="font-serif font-black text-3xl md:text-[42px] text-brand-gold mb-3 leading-tight">Sponsorship Tiers</h2>
+                <p class="font-sans text-white/90 text-sm md:text-[15px]">Choose the level of partnership that aligns with your
                     brand's goals and vision.</p>
             </div>
 
             <!-- Royal Patron (Featured) -->
             <div
-                class="border-[1.5px] border-brand-gold rounded-[24px] p-10 md:p-14 mb-8 bg-[#133220] shadow-[0_0_20px_rgba(210,161,67,0.15)]">
+                class="border-[1.5px] border-brand-gold rounded-[24px] p-8 md:p-14 mb-8 bg-[#133220] shadow-[0_0_20px_rgba(210,161,67,0.15)]">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <!-- Left -->
                     <div>
@@ -524,7 +555,7 @@
                         d="M16 9v-2a4 4 0 0 0-8 0v2H6v5h12V9h-2zm-6-2a2 2 0 0 1 4 0v2h-4v-2zm-3 5h10v1H7v-1zm11 4H6v3h12v-3z" />
                 </svg>
             </div>
-            <h2 class="font-serif italic text-3xl md:text-[34px] text-brand-gold leading-[1.4] mb-10 max-w-3xl mx-auto">
+            <h2 class="font-serif italic text-2xl md:text-[34px] text-brand-gold leading-relaxed mb-10 max-w-3xl mx-auto">
                 "The Eti-Osa Carnival is a celebration of our heritage and a statement of who we are as a people. Your
                 support makes this possible."
             </h2>
@@ -538,9 +569,9 @@
     <section class="bg-brand-cream py-32 relative">
         <div class="container mx-auto px-6 max-w-4xl relative">
             <div
-                class="bg-white rounded-[24px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] px-8 py-16 md:px-16 text-center relative border border-brand-green/5">
-                <h2 class="font-serif font-black text-4xl text-brand-green mb-3">Start the Conversation</h2>
-                <p class="font-sans text-brand-green/80 text-[14px] mb-12">Fill out the form below and our partnership
+                class="bg-white rounded-[24px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] px-6 py-12 md:px-16 md:py-16 text-center relative border border-brand-green/5">
+                <h2 class="font-serif font-black text-3xl md:text-4xl text-brand-green mb-3">Start the Conversation</h2>
+                <p class="font-sans text-brand-green/80 text-sm md:text-[14px] mb-12">Fill out the form below and our partnership
                     team will contact you shortly.</p>
 
                 <form class="text-left space-y-6" id="sponsorship-form" data-ajax-submit="true">
@@ -606,15 +637,15 @@
                         <textarea name="message" rows="4" placeholder="Tell us about your brand's goals..."
                             class="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 font-sans text-[13px] text-brand-green placeholder-gray-400 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-colors resize-y"></textarea>
                     </div>
-                </form>
 
-                <!-- Floating Submit Button -->
-                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                    <button type="submit" form="sponsorship-form"
-                        class="bg-brand-gold text-brand-green font-sans font-bold text-[14px] px-12 py-3.5 rounded-full hover:bg-opacity-90 transition-all shadow-[0_8px_20px_rgba(210,161,67,0.3)] border-2 border-white">
-                        Send Enquiry
-                    </button>
-                </div>
+                    <!-- Submit Button Integrated -->
+                    <div class="pt-8 flex justify-center">
+                        <button type="submit"
+                            class="bg-brand-gold text-brand-green font-sans font-bold text-[14px] px-12 py-3.5 rounded-full hover:bg-opacity-90 transition-all shadow-[0_8px_20px_rgba(210,161,67,0.3)] border-2 border-white w-full sm:w-auto">
+                            Send Enquiry
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -791,7 +822,7 @@
                     COMMITTEE.</p>
                 <p class="text-white/30 text-[10px] uppercase tracking-widest text-center md:text-right max-w-md">
                     PRODUCED BY <span class="text-white/50">MYHAVEN INTEGRATED LIMITED</span> IN CO-PRESENTATION WITH
-                    THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM.
+                    THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM, ARTS AND CULTURE.
                 </p>
             </div>
         </div>
@@ -800,6 +831,29 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/form-handler.js"></script>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.add('flex');
+                    mobileMenu.classList.remove('opacity-0');
+                }, 10);
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }, 300);
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -38,10 +38,12 @@
         }
     </script>
     <style>
-        @layer base {
-            body {
-                @apply bg-carnival-dark text-white font-sans antialiased;
-            }
+        body {
+            background-color: #0A1510;
+            color: #ffffff;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .glass-card {
@@ -63,11 +65,45 @@
         }
 
         .btn-gold {
-            @apply bg-gold text-carnival-dark font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-gold-light hover:scale-105 active:scale-95 shadow-lg shadow-gold/20;
+            background-color: #C5A059;
+            color: #0A1510;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(197, 160, 89, 0.2);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-gold:hover {
+            background-color: #E5C47F;
+            transform: scale(1.05);
+        }
+
+        .btn-gold:active {
+            transform: scale(0.95);
         }
 
         .btn-outline {
-            @apply border border-white/50 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-white hover:text-carnival-dark hover:scale-105 active:scale-95;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-outline:hover {
+            background-color: #ffffff;
+            color: #0A1510;
+            transform: scale(1.05);
+        }
+
+        .btn-outline:active {
+            transform: scale(0.95);
         }
 
         @keyframes float {
@@ -107,20 +143,32 @@
         }
 
         .nav-link {
-            @apply relative text-[11px] font-black uppercase tracking-widest text-white transition-all duration-300;
+            position: relative;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #ffffff;
+            transition: all 0.3s ease;
         }
 
         .nav-link::after {
             content: '';
-            @apply absolute -bottom-1 left-0 w-0 h-[2px] bg-gold transition-all duration-300;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #C5A059;
+            transition: all 0.3s ease;
         }
 
         .nav-link:hover {
-            @apply text-gold;
+            color: #C5A059;
         }
 
         .nav-link:hover::after {
-            @apply w-full;
+            width: 100%;
         }
 
         .no-scrollbar::-webkit-scrollbar {
@@ -245,40 +293,40 @@
             </div>
 
             <h1
-                class="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight mb-3 text-white tracking-tight hover:text-[#C5A059] transition-colors duration-500 cursor-default">
+                class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-4 text-white tracking-tight hover:text-[#C5A059] transition-colors duration-500 cursor-default">
                 The Carnival of <span class="text-[#C5A059]">Eti-Osa</span>
             </h1>
 
             <p
-                class="text-sm md:text-base font-medium tracking-wide text-white/90 mb-10 max-w-xl mx-auto leading-relaxed">
+                class="text-base md:text-lg font-medium tracking-wide text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
                 14 Days of Culture, Royalty & Celebration — Lagos, December 2026
             </p>
 
-            <!-- Countdown -->
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+            <!-- Countdown Container -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-6 mb-16 px-4">
                 <div
-                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-lg p-3 w-20 md:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
-                    <div class="text-xl md:text-2xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
+                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-xl p-4 w-[75px] sm:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
+                    <div class="text-xl sm:text-3xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
                         id="days">345</div>
-                    <div class="text-[7px] md:text-[9px] font-bold uppercase tracking-widest text-white/50">Days</div>
+                    <div class="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-white/50">Days</div>
                 </div>
                 <div
-                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-lg p-3 w-20 md:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
-                    <div class="text-xl md:text-2xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
+                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-xl p-4 w-[75px] sm:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
+                    <div class="text-xl sm:text-3xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
                         id="hours">14</div>
-                    <div class="text-[7px] md:text-[9px] font-bold uppercase tracking-widest text-white/50">Hours</div>
+                    <div class="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-white/50">Hours</div>
                 </div>
                 <div
-                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-lg p-3 w-20 md:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
-                    <div class="text-xl md:text-2xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
+                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-xl p-4 w-[75px] sm:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
+                    <div class="text-xl sm:text-3xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
                         id="mins">22</div>
-                    <div class="text-[7px] md:text-[9px] font-bold uppercase tracking-widest text-white/50">Mins</div>
+                    <div class="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-white/50">Mins</div>
                 </div>
                 <div
-                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-lg p-3 w-20 md:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
-                    <div class="text-xl md:text-2xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
+                    class="bg-[#0A1F16]/70 border border-[#C5A059]/30 rounded-xl p-4 w-[75px] sm:w-24 transition-all duration-500 hover:scale-110 hover:border-[#C5A059] hover:bg-[#0A1F16] group cursor-default">
+                    <div class="text-xl sm:text-3xl font-bold text-[#C5A059] mb-1 group-hover:scale-110 transition-transform"
                         id="secs">09</div>
-                    <div class="text-[7px] md:text-[9px] font-bold uppercase tracking-widest text-white/50">Secs</div>
+                    <div class="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-white/50">Secs</div>
                 </div>
             </div>
 
@@ -306,10 +354,10 @@
     </section>
 
     <!-- Patronage & Introduction Section -->
-    <section class="bg-[#FCFBF4] py-24 px-6 md:px-16 lg:px-24 relative overflow-hidden">
+    <section class="bg-[#FCFBF4] py-16 md:py-24 lg:py-32 px-6 md:px-16 lg:px-24 relative overflow-hidden">
         <!-- Patronage Bar -->
-        <div class="container mx-auto mb-24">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-12 border-y border-[#0A1F16]/10 py-6">
+        <div class="container mx-auto mb-16 md:mb-24">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 border-y border-[#0A1F16]/10 py-10 md:py-6">
                 <!-- Lagos Logo -->
                 <div class="flex items-center gap-4">
                     <div class="w-16 h-16 flex items-center justify-center">
@@ -339,7 +387,7 @@
                 <!-- Text -->
                 <div class="text-center md:max-w-3xl">
                     <p class="text-[#0A1F16] text-sm md:text-base font-medium leading-relaxed tracking-tight">
-                        Officially collaborated with the <span class="font-bold">Lagos State Ministry of Tourism</span>
+                        Officially collaborated with the <span class="font-bold">LAGOS STATE MINISTRY OF TOURISM, ARTS AND CULTURE</span>
                         • In partnership with <span class="font-bold">Eti-Osa Local Government</span> • Under Royal
                         Patronage of the <span class="font-bold">Royal Families of Eti-Osa</span>
                     </p>
@@ -368,10 +416,10 @@
         <div class="container mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                 <!-- Left: Quote (Span 7) -->
-                <div class="lg:col-span-7 relative pl-12">
-                    <div class="absolute left-0 top-2 bottom-2 w-[4px] bg-[#C5A059]"></div>
+                <div class="lg:col-span-7 relative pl-8 md:pl-12">
+                    <div class="absolute left-0 top-2 bottom-2 w-[3px] md:w-[4px] bg-[#C5A059]"></div>
                     <h2
-                        class="text-4xl md:text-5xl lg:text-[64px] font-serif text-[#1A3C2A] leading-[1.05] tracking-tight font-black">
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-serif text-[#1A3C2A] leading-[1.1] md:leading-[1.05] tracking-tight font-black">
                         "14 days. One city. A carnival unlike anything Lagos has ever seen."
                     </h2>
                 </div>
@@ -388,15 +436,15 @@
         </div>
 
         <!-- Diamond Divider -->
-        <div class="mt-32 flex items-center justify-center gap-8">
-            <div class="h-[1px] w-48 bg-[#C5A059]/40"></div>
-            <div class="w-4 h-4 rotate-45 bg-[#C5A059]"></div>
-            <div class="h-[1px] w-48 bg-[#C5A059]/40"></div>
+        <div class="mt-20 md:mt-32 flex items-center justify-center gap-4 md:gap-8">
+            <div class="h-[1px] w-24 md:w-48 bg-[#C5A059]/40"></div>
+            <div class="w-3 h-3 md:w-4 md:h-4 rotate-45 bg-[#C5A059]"></div>
+            <div class="h-[1px] w-24 md:w-48 bg-[#C5A059]/40"></div>
         </div>
     </section>
 
     <!-- What's On Section (Carousel) -->
-    <section class="bg-[#061811] py-24 px-6 md:px-16 lg:px-24 overflow-hidden" id="schedule">
+    <section class="bg-[#061811] py-16 md:py-24 px-6 md:px-16 lg:px-24 overflow-hidden" id="schedule">
         <div class="container mx-auto">
             <!-- Header -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
@@ -422,7 +470,7 @@
 
                 <!-- Card 1: Royal Durbar -->
                 <div
-                    class="group relative min-w-[320px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    class="group relative min-w-[280px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     <div class="aspect-[16/9] overflow-hidden relative">
                         <img src="royal_durbar_event_1778042233906.png"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -447,7 +495,7 @@
 
                 <!-- Card 2: Carnival Parade -->
                 <div
-                    class="group relative min-w-[320px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    class="group relative min-w-[280px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     <div class="aspect-[16/9] overflow-hidden relative">
                         <img src="carnival_parade_event_1778042257859.png"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -476,7 +524,7 @@
 
                 <!-- Card 3: Floating Concert -->
                 <div
-                    class="group relative min-w-[320px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    class="group relative min-w-[280px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     <div class="aspect-[16/9] overflow-hidden relative">
                         <img src="floating_concert_event_1778042273554.png"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -505,7 +553,7 @@
 
                 <!-- Card 4: Grand Finale -->
                 <div
-                    class="group relative min-w-[320px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    class="group relative min-w-[280px] md:min-w-[450px] bg-[#1A3C2A] rounded-2xl overflow-hidden snap-start transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     <div class="aspect-[16/9] overflow-hidden relative">
                         <img src="grand_finale_event_1778042288014.png"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -537,7 +585,7 @@
     </section>
 
     <!-- Join a Royal Carnival Band Section -->
-    <section class="bg-[#112A1F] py-24 px-6 md:px-16 lg:px-24 text-center">
+    <section class="bg-[#112A1F] py-16 md:py-24 px-6 md:px-16 lg:px-24 text-center">
         <div class="container mx-auto">
             <!-- Header Icon -->
             <div class="flex justify-center mb-8 text-[#C5A059]">
@@ -547,8 +595,8 @@
                 </svg>
             </div>
 
-            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Join a Royal Carnival Band</h2>
-            <p class="text-white/70 text-lg max-w-3xl mx-auto mb-16 leading-relaxed font-medium">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-6">Join a Royal Carnival Band</h2>
+            <p class="text-white/70 text-base md:text-lg max-w-3xl mx-auto mb-12 md:mb-16 leading-relaxed font-medium">
                 Be part of the spectacle. Register to march, dance, and celebrate with the prestigious royal families.
             </p>
 
@@ -557,7 +605,7 @@
 
                 <!-- Card 1: Elegushi -->
                 <div
-                    class="group bg-[#0A1F16] border border-white/5 p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
+                    class="group bg-[#0A1F16] border border-white/5 p-8 sm:p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
                     <div
                         class="w-20 h-20 mx-auto mb-8 rounded-full bg-white/5 flex items-center justify-center border border-[#C5A059]/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#C5A059]/10">
                         <svg viewBox="0 0 24 24" class="w-10 h-10 text-[#C5A059]" fill="currentColor">
@@ -570,7 +618,7 @@
 
                 <!-- Card 2: Oniru -->
                 <div
-                    class="group bg-[#0A1F16] border border-white/5 p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
+                    class="group bg-[#0A1F16] border border-white/5 p-8 sm:p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
                     <div
                         class="w-20 h-20 mx-auto mb-8 rounded-full bg-white/5 flex items-center justify-center border border-[#C5A059]/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#C5A059]/10">
                         <svg viewBox="0 0 24 24" class="w-10 h-10 text-[#C5A059]" fill="currentColor">
@@ -584,7 +632,7 @@
 
                 <!-- Card 3: Ojomu -->
                 <div
-                    class="group bg-[#0A1F16] border border-white/5 p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
+                    class="group bg-[#0A1F16] border border-white/5 p-8 sm:p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
                     <div
                         class="w-20 h-20 mx-auto mb-8 rounded-full bg-white/5 flex items-center justify-center border border-[#C5A059]/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#C5A059]/10">
                         <svg viewBox="0 0 24 24" class="w-10 h-10 text-[#C5A059]" fill="currentColor">
@@ -597,7 +645,7 @@
 
                 <!-- Card 4: Ikateland -->
                 <div
-                    class="group bg-[#0A1F16] border border-white/5 p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
+                    class="group bg-[#0A1F16] border border-white/5 p-8 sm:p-10 rounded-2xl transition-all duration-500 hover:bg-[#1A3C2A] hover:border-[#C5A059]/30 hover:-translate-y-2 cursor-pointer shadow-xl">
                     <div
                         class="w-20 h-20 mx-auto mb-8 rounded-full bg-white/5 flex items-center justify-center border border-[#C5A059]/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#C5A059]/10">
                         <svg viewBox="0 0 24 24" class="w-10 h-10 text-[#C5A059]" fill="currentColor">
@@ -626,13 +674,13 @@
     </section>
 
     <!-- Vendors & Trade Fair Section -->
-    <section class="bg-[#FCFBF4] py-24 px-6 md:px-16 lg:px-24">
+    <section class="bg-[#FCFBF4] py-16 md:py-24 px-6 md:px-16 lg:px-24">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                 <!-- Card 1: Trade Fair -->
                 <div
-                    class="group relative bg-white border border-[#0A1F16]/5 p-12 md:p-16 rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 shadow-sm">
+                    class="group relative bg-white border border-[#0A1F16]/5 p-8 md:p-16 rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 shadow-sm">
                     <!-- Corner Decoration -->
                     <div
                         class="absolute -top-12 -right-12 w-32 h-32 bg-[#FCFBF4] rounded-full transition-transform duration-700 group-hover:scale-125">
@@ -663,7 +711,7 @@
 
                 <!-- Card 2: Carnival Vendor -->
                 <div
-                    class="group relative bg-[#0A1F16] p-12 md:p-16 rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                    class="group relative bg-[#0A1F16] p-8 md:p-16 rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
                     <!-- Corner Decoration -->
                     <div
                         class="absolute -top-12 -right-12 w-32 h-32 bg-[#1A3C2A]/40 rounded-full transition-transform duration-700 group-hover:scale-125">
@@ -703,9 +751,9 @@
     <section class="bg-white py-24 px-6 md:px-16 lg:px-24 text-center">
         <div class="container mx-auto">
             <!-- Header -->
-            <div class="mb-20">
+            <div class="mb-12 md:mb-20">
                 <p class="text-[#0A1F16]/40 text-xs font-bold uppercase tracking-[0.4em] mb-4">Support</p>
-                <h2 class="text-4xl md:text-5xl font-serif text-[#0A1F16]">Our Partners & Sponsors</h2>
+                <h2 class="text-3xl md:text-5xl font-serif text-[#0A1F16]">Our Partners & Sponsors</h2>
             </div>
 
             <!-- Royal Patron Tier -->
@@ -767,11 +815,11 @@
     </section>
 
     <!-- Moments from Eti-Osa Gallery Section -->
-    <section class="bg-[#FCFBF4] py-24 px-6 md:px-16 lg:px-24">
+    <section class="bg-[#FCFBF4] py-16 md:py-24 px-6 md:px-16 lg:px-24">
         <div class="container mx-auto">
             <!-- Header -->
-            <div class="flex justify-between items-end mb-12">
-                <h2 class="text-4xl md:text-5xl font-serif text-[#1A3C2A]">Moments from Eti-Osa</h2>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+                <h2 class="text-3xl md:text-5xl font-serif text-[#1A3C2A]">Moments from Eti-Osa</h2>
                 <a href="contact.html"
                     class="group flex items-center gap-2 text-[#1A3C2A] border-b border-[#1A3C2A]/20 pb-1 hover:border-[#1A3C2A] transition-all duration-300">
                     <span class="text-sm font-bold uppercase tracking-widest">View Gallery</span>
@@ -842,7 +890,7 @@
     </section>
 
     <!-- Be the First to Know Section -->
-    <section class="py-24 px-6 md:px-16 lg:px-24 bg-[#0A1F16] text-center relative overflow-hidden">
+    <section class="py-16 md:py-24 px-6 md:px-16 lg:px-24 bg-[#0A1F16] text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-[#C5A059]/5 blur-[120px] rounded-full scale-150"></div>
         <div class="container mx-auto relative z-10">
             <!-- Icon -->
@@ -856,8 +904,8 @@
                 </div>
             </div>
 
-            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Be the First to Know</h2>
-            <p class="text-white/60 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-6">Be the First to Know</h2>
+            <p class="text-white/60 text-base md:text-lg max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium">
                 Updates on events, tickets, vendor registration, and band announcements delivered straight to you. Join
                 our prestigious community today.
             </p>
@@ -1013,7 +1061,7 @@
                     COMMITTEE.</p>
                 <p class="text-white/30 text-[10px] uppercase tracking-widest text-center md:text-right max-w-md">
                     PRODUCED BY <span class="text-white/50">MYHAVEN INTEGRATED LIMITED</span> IN CO-PRESENTATION WITH
-                    THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM.
+                    THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM, ARTS AND CULTURE.
                 </p>
             </div>
         </div>

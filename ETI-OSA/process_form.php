@@ -1,21 +1,31 @@
 <?php
 /**
- * Eti-Osa Carnival - Ultra-Compatible Form Processor
+ * Eti-Osa Carnival - Full Robust Form Processor
  */
 
-// 1. Force error reporting ON for one run to find the crash, but keep it JSON compatible
+// 1. Setup Environment & Logging
 error_reporting(E_ALL);
-ini_set('display_errors', 0); // Keep 0 to avoid breaking JSON, but we'll capture them
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 header('Content-Type: application/json');
 
-// Catch fatal errors that don't throw exceptions
+// 2. Check Method
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode([
+        'success' => false,
+        'message' => 'Invalid Request Method: ' . $_SERVER['REQUEST_METHOD'] . '. Please ensure you are submitting the form via POST.'
+    ]);
+    exit;
+}
+
+// 3. Setup Error Catcher
 register_shutdown_function(function() {
     $error = error_get_last();
-    if ($error !== NULL && ($error['type'] === E_ERROR || $error['type'] === E_PARSE || $error['type'] === E_CORE_ERROR || $error['type'] === E_COMPILE_ERROR)) {
+    if ($error !== NULL && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
         if (ob_get_length()) ob_clean();
         echo json_encode([
             'success' => false,
-            'message' => 'Fatal PHP Error: ' . $error['message'] . ' in ' . $error['file'] . ' on line ' . $error['line']
+            'message' => 'Fatal Server Error: ' . $error['message']
         ]);
     }
 });
@@ -23,100 +33,84 @@ register_shutdown_function(function() {
 ob_start();
 
 try {
-    // 2. Load PHPMailer files manually for maximum compatibility
-    $dir = dirname(__FILE__) . '/PHPMailer/';
-    
-    if (!file_exists($dir . 'Exception.php')) throw new Exception("Missing PHPMailer/Exception.php");
-    if (!file_exists($dir . 'PHPMailer.php')) throw new Exception("Missing PHPMailer/PHPMailer.php");
-    if (!file_exists($dir . 'SMTP.php')) throw new Exception("Missing PHPMailer/SMTP.php");
+    // 4. Load PHPMailer
+    $mailerDir = __DIR__ . '/PHPMailer/';
+    require_once $mailerDir . 'Exception.php';
+    require_once $mailerDir . 'PHPMailer.php';
+    require_once $mailerDir . 'SMTP.php';
 
-    require_once $dir . 'Exception.php';
-    require_once $dir . 'PHPMailer.php';
-    require_once $dir . 'SMTP.php';
-
-    // Use namespaces after requiring
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
 
-    // 3. Configuration
-    $smtpHost = 'strideauto.co';
-    $smtpUsername = 'eti-osa@strideauto.co';
-    $smtpPassword = 'X=kSAG}@^u#%';
-    $smtpPort = 465;
-    $smtpSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
-
-    $recipientEmailStr = 'ayomidegrace26@gmail.com, support@etiosacarnival.com, gloryglobalresources@gmail.com';
-    $recipientName = 'Eti-Osa Carnival Support';
-
-    // 4. Request Validation
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        throw new Exception('Please submit the form via the website.');
-    }
-
-    $formType = $_POST['form_type'] ?? 'contact';
-    $userEmail = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    $userName = htmlspecialchars($_POST['fullname'] ?? 'Website User');
-
-    // 5. Setup Mail
+    // 5. SMTP Configuration
     $mail->isSMTP();
-    $mail->Host       = $smtpHost;
+    $mail->Host       = 'mail.etiosacarnival.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = $smtpUsername;
-    $mail->Password   = $smtpPassword;
-    $mail->SMTPSecure = $smtpSecure;
-    $mail->Port       = $smtpPort;
+    $mail->Username   = 'mail@etiosacarnival.com';
+    $mail->Password   = 'c=80L]xS27eM';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port       = 465;
     $mail->CharSet    = 'UTF-8';
-    $mail->Timeout    = 20;
+    $mail->Timeout    = 25;
 
-    $mail->setFrom($smtpUsername, 'Eti-Osa Carnival');
+    // 6. Recipients
+    $mail->setFrom('eti-osa@strideauto.co', 'Eti-Osa Carnival Website');
+    $mail->addAddress('ayomidegrace26@gmail.com');
+    $mail->addAddress('support@etiosacarnival.com');
+    $mail->addAddress('gloryglobalresources@gmail.com');
+
+    // 7. Content
+    $formType = $_POST['form_type'] ?? 'General Inquiry';
+    $fullname = $_POST['fullname'] ?? 'Valued Visitor';
+    $userEmail = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
     
-    $emails = explode(',', $recipientEmailStr);
-    foreach ($emails as $email) {
-        $email = trim($email);
-        if ($email) $mail->addAddress($email, $recipientName);
-    }
-
     if ($userEmail) {
-        $mail->addReplyTo($userEmail, $userName);
+        $mail->addReplyTo($userEmail, $fullname);
     }
 
     $mail->isHTML(true);
-
-    // 6. Content Logic
-    switch ($formType) {
-        case 'sponsorship':
-            $company = htmlspecialchars($_POST['company'] ?? 'N/A');
-            $tier = htmlspecialchars($_POST['tier'] ?? 'N/A');
-            $mail->Subject = "Sponsorship Inquiry: $company";
-            $mail->Body = "<h2>Sponsorship</h2><p><strong>Name:</strong> $userName</p><p><strong>Company:</strong> $company</p><p><strong>Tier:</strong> $tier</p>";
-            break;
-        
-        case 'band_registration':
-            $band = htmlspecialchars($_POST['band'] ?? 'N/A');
-            $mail->Subject = "Band Registration: $band";
-            $mail->Body = "<h2>Band Registration</h2><p><strong>Name:</strong> $userName</p><p><strong>Band:</strong> $band</p>";
-            break;
-
-        default: // 'contact' or any other
-            $subject = htmlspecialchars($_POST['subject'] ?? 'New Message');
-            $phone = htmlspecialchars($_POST['phone'] ?? 'N/A');
-            $msgContent = nl2br(htmlspecialchars($_POST['message'] ?? ''));
-            $mail->Subject = "Contact: $subject";
-            $mail->Body = "<h2>Message from Website</h2><p><strong>From:</strong> $userName ($userEmail)</p><p><strong>Phone:</strong> $phone</p><hr><p>$msgContent</p>";
-            break;
+    $mail->Subject = "New Website Inquiry: " . ucwords(str_replace('_', ' ', $formType));
+    
+    $tableRows = "";
+    foreach ($_POST as $key => $value) {
+        if ($key === 'form_type') continue;
+        $label = ucwords(str_replace(['_', '-'], ' ', $key));
+        $val = nl2br(htmlspecialchars($value));
+        $tableRows .= "<tr><td style='padding:10px; border:1px solid #eee; background:#f9f9f9; width:150px;'><strong>$label:</strong></td><td style='padding:10px; border:1px solid #eee;'>$val</td></tr>";
     }
 
-    // 7. Execute
-    if (!$mail->send()) {
-        throw new Exception($mail->ErrorInfo);
-    }
+    $mail->Body = "
+        <div style='font-family:sans-serif; color:#113521; max-width:600px; border:1px solid #D2A143; border-radius:12px; overflow:hidden;'>
+            <div style='background:#113521; color:#D2A143; padding:20px; text-align:center;'>
+                <h1 style='margin:0; font-size:20px;'>ETI-OSA CARNIVAL 2026</h1>
+            </div>
+            <div style='padding:30px;'>
+                <h2 style='color:#113521; font-size:18px;'>New Submission Details</h2>
+                <table style='width:100%; border-collapse:collapse; margin-top:15px;'>$tableRows</table>
+            </div>
+        </div>
+    ";
 
-    if (ob_get_length()) ob_clean();
-    echo json_encode(['success' => true, 'message' => 'Message sent successfully!']);
+    // 8. Send
+    if ($mail->send()) {
+        if (ob_get_length()) ob_clean();
+        echo json_encode(['success' => true, 'message' => 'Thank you! Your message has been sent.']);
+    } else {
+        throw new Exception("Mailing system failure.");
+    }
 
 } catch (Exception $e) {
-    if (ob_get_length()) ob_clean();
-    echo json_encode(['success' => false, 'message' => $e->getMessage()]);
-} catch (\Throwable $t) {
-    if (ob_get_length()) ob_clean();
-    echo json_encode(['success' => false, 'message' => 'System Error: ' . $t->getMessage()]);
+    // 9. Fallback to PHP mail()
+    $to = "ayomidegrace26@gmail.com, support@etiosacarnival.com, gloryglobalresources@gmail.com";
+    $subject = "Fallback Submission: " . $formType;
+    $msg = "A submission was received but SMTP failed. Details:\n\n";
+    foreach ($_POST as $k => $v) { $msg .= "$k: $v\n"; }
+    $headers = "From: eti-osa@strideauto.co";
+    
+    if (mail($to, $subject, $msg, $headers)) {
+        if (ob_get_length()) ob_clean();
+        echo json_encode(['success' => true, 'message' => 'Message sent (Backup System).']);
+    } else {
+        if (ob_get_length()) ob_clean();
+        echo json_encode(['success' => false, 'message' => 'The server was unable to send your message. Please try again later.']);
+    }
 }

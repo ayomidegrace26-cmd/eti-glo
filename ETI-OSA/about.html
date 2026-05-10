@@ -36,10 +36,12 @@
         }
     </script>
     <style>
-        @layer base {
-            body {
-                @apply bg-carnival-dark text-white font-sans antialiased;
-            }
+        body {
+            background-color: #0A1F16;
+            color: #ffffff;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .glass-card {
@@ -54,28 +56,68 @@
         }
 
         .btn-gold {
-            @apply bg-gold text-carnival-dark font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-gold-light hover:scale-105 active:scale-95 shadow-lg shadow-gold/20;
+            background-color: #C5A059;
+            color: #0A1F16;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(197, 160, 89, 0.2);
+        }
+
+        .btn-gold:hover {
+            background-color: #D4B476;
+            transform: translateY(-2px) scale(1.05);
         }
 
         .btn-outline {
-            @apply border border-white/50 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-white hover:text-carnival-dark hover:scale-105 active:scale-95;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-outline:hover {
+            background-color: #ffffff;
+            color: #0A1F16;
+            transform: translateY(-2px) scale(1.05);
         }
 
         .nav-link {
-            @apply relative text-[11px] font-black uppercase tracking-widest text-white transition-all duration-300;
+            position: relative;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            transition: all 0.3s;
         }
 
         .nav-link::after {
             content: '';
-            @apply absolute -bottom-1 left-0 w-0 h-[2px] bg-gold transition-all duration-300;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #C5A059;
+            transition: all 0.3s;
         }
 
         .nav-link:hover {
-            @apply text-gold;
+            color: #C5A059;
         }
 
         .nav-link:hover::after {
-            @apply w-full;
+            width: 100%;
         }
 
         .no-scrollbar::-webkit-scrollbar {
@@ -147,12 +189,12 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="relative h-[60vh] md:h-[70vh] w-full flex flex-col items-center justify-center bg-[#062216] overflow-hidden pt-20">
+    <section class="relative h-[50vh] md:h-[70vh] w-full flex flex-col items-center justify-center bg-[#062216] overflow-hidden pt-20">
         <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="text-4xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight leading-[1.1]">
                 About the Eti-Osa Carnival
             </h1>
-            <p class="text-lg md:text-2xl font-serif italic text-gold tracking-wide">
+            <p class="text-base md:text-2xl font-serif italic text-gold tracking-wide">
                 Lagos State's Premier Cultural Festival
             </p>
         </div>
@@ -165,7 +207,7 @@
     <main class="bg-[#FCFBF4] text-[#1A3C2A]">
         
         <!-- Our Story -->
-        <section class="py-24 px-6 md:px-16 lg:px-24 bg-[#FCFBF4]">
+        <section class="py-16 md:py-24 px-6 md:px-16 lg:px-24 bg-[#FCFBF4]">
             <div class="container mx-auto max-w-4xl text-center">
                 <!-- Icon -->
                 <div class="flex justify-center mb-6">
@@ -175,7 +217,7 @@
                     </svg>
                 </div>
 
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1A3C2A] mb-12">Our Story</h2>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif text-[#1A3C2A] mb-8 md:mb-12">Our Story</h2>
 
                 <div class="space-y-8 text-[#1A3C2A]/90 text-lg md:text-xl leading-relaxed text-left md:text-center">
                     <p>
@@ -193,7 +235,7 @@
                             </div>
                         </div>
                         <div class="mt-8">
-                            <h3 class="text-2xl md:text-4xl lg:text-5xl font-serif italic text-gold">
+                            <h3 class="text-xl md:text-4xl lg:text-5xl font-serif italic text-gold">
                                 "Built on heritage. Designed for the world."
                             </h3>
                         </div>
@@ -346,59 +388,41 @@
                 <p class="text-gold text-xs font-bold uppercase tracking-[0.4em] mb-4">Collaboration</p>
                 <h2 class="text-4xl md:text-5xl font-serif text-[#1A3C2A] mb-16">Our Partners</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Partner Card 1 -->
-                    <div class="bg-white p-10 rounded-2xl shadow-xl shadow-[#000000]/5 flex flex-col items-center group hover:-translate-y-2 transition-all duration-500">
-                        <div class="w-24 h-24 mb-8 relative">
-                            <div class="absolute inset-0 bg-gold/5 rounded-full scale-150 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <!-- Lagos State Logo Placeholder -->
-                            <div class="w-full h-full rounded-full bg-[#0A1F16] border-2 border-[#C5A059] flex items-center justify-center relative overflow-hidden">
-                                <svg viewBox="0 0 100 100" class="absolute inset-0 w-full h-full rotate-[-90deg]">
-                                    <path id="textCircle1" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-                                    <text class="text-[8px] font-bold fill-[#C5A059] tracking-[0.2em]">
-                                        <textPath xlink:href="#textCircle1" startOffset="25%">LAGOS STATE</textPath>
-                                    </text>
-                                </svg>
-                                <svg viewBox="0 0 100 100" class="w-10 h-10 text-[#C5A059]" fill="currentColor">
-                                    <path d="M50 20 L55 35 H65 L57 45 L60 60 L50 50 L40 60 L43 45 L35 35 H45 Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#1A3C2A] mb-3">Lagos State Ministry of Tourism</h3>
-                        <p class="text-[#1A3C2A]/60 text-sm leading-relaxed">Official Co-Presenting Partner and Government Liaison</p>
-                    </div>
-
-                    <!-- Partner Card 2 -->
-                    <div class="bg-white p-10 rounded-2xl shadow-xl shadow-[#000000]/5 flex flex-col items-center group hover:-translate-y-2 transition-all duration-500">
-                        <div class="w-24 h-24 mb-8 relative">
-                            <div class="absolute inset-0 bg-gold/5 rounded-full scale-150 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <!-- Eti-Osa Logo Placeholder -->
-                            <div class="w-full h-full rounded-full border-2 border-carnival-green flex flex-col items-center justify-center bg-white p-1 shadow-inner">
-                                <div class="text-[8px] font-black text-carnival-green leading-none uppercase">Eti Osa</div>
-                                <div class="w-full h-[1px] bg-gold my-0.5"></div>
-                                <div class="text-[6px] font-bold text-carnival-green/60 leading-none">LOCAL GOVT</div>
-                                <svg viewBox="0 0 24 24" class="w-6 h-6 text-gold mt-0.5" fill="currentColor">
-                                    <path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z"/>
-                                </svg>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                    <!-- Partner Card 1: Eti-Osa Local Government -->
+                    <div class="bg-white p-10 rounded-2xl shadow-xl shadow-[#000000]/05 flex flex-col items-center group hover:-translate-y-2 transition-all duration-500 h-full border border-black/5">
+                        <div class="w-28 h-28 mb-8 relative">
+                            <div class="absolute inset-0 bg-gold/10 rounded-full scale-125 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-full h-full rounded-full bg-white border-2 border-[#1A3C2A]/10 flex items-center justify-center relative z-10 p-2 overflow-hidden shadow-sm">
+                                <img src="eti-osa-gov-seal.png" alt="Eti-Osa Local Government Seal" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500">
                             </div>
                         </div>
                         <h3 class="text-xl font-bold text-[#1A3C2A] mb-3">Eti-Osa Local Government</h3>
-                        <p class="text-[#1A3C2A]/60 text-sm leading-relaxed">Host Municipality and Infrastructure Partner</p>
+                        <p class="text-[#1A3C2A]/60 text-sm leading-relaxed mt-auto">Host Municipality and Infrastructure Partner</p>
                     </div>
 
-                    <!-- Partner Card 3 -->
-                    <div class="bg-white p-10 rounded-2xl shadow-xl shadow-[#000000]/5 flex flex-col items-center group hover:-translate-y-2 transition-all duration-500">
-                        <div class="w-24 h-24 mb-8 relative">
-                            <div class="absolute inset-0 bg-gold/5 rounded-full scale-150 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <!-- Royal Families Logo Placeholder -->
-                            <div class="w-full h-full rounded-full bg-[#0A1F16] border-2 border-[#C5A059] flex items-center justify-center">
-                                <svg viewBox="0 0 24 24" fill="none" class="text-[#C5A059] w-12 h-12" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5Z" fill="currentColor"/>
-                                </svg>
+                    <!-- Partner Card 2: Lagos State Ministry of Tourism, Arts and Culture -->
+                    <div class="bg-white p-10 rounded-2xl shadow-xl shadow-[#000000]/05 flex flex-col items-center group hover:-translate-y-2 transition-all duration-500 h-full border border-black/5">
+                        <div class="w-28 h-28 mb-8 relative">
+                            <div class="absolute inset-0 bg-gold/10 rounded-full scale-125 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-full h-full rounded-full bg-white border-2 border-[#1A3C2A]/10 flex items-center justify-center relative z-10 p-2 overflow-hidden shadow-sm">
+                                <img src="lagos-tourism-logo.png" alt="LAGOS STATE MINISTRY OF TOURISM, ARTS AND CULTURE Logo" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1A3C2A] mb-3">Lagos State Ministry of Tourism, Arts and Culture</h3>
+                        <p class="text-[#1A3C2A]/60 text-sm leading-relaxed mt-auto">Official Co-Presenting Partner and Government Liaison</p>
+                    </div>
+
+                    <!-- Partner Card 3: Royal Families of Eti-Osa -->
+                    <div class="bg-white p-10 rounded-2xl shadow-xl shadow-[#000000]/05 flex flex-col items-center group hover:-translate-y-2 transition-all duration-500 h-full border border-black/5">
+                        <div class="w-28 h-28 mb-8 relative">
+                            <div class="absolute inset-0 bg-gold/10 rounded-full scale-125 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-full h-full rounded-full bg-white border-2 border-[#1A3C2A]/10 flex items-center justify-center relative z-10 p-2 overflow-hidden shadow-sm">
+                                <img src="royal-families-logo.png" alt="Royal Families of Eti-Osa Logo" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500">
                             </div>
                         </div>
                         <h3 class="text-xl font-bold text-[#1A3C2A] mb-3">Royal Families of Eti-Osa</h3>
-                        <p class="text-[#1A3C2A]/60 text-sm leading-relaxed">Royal Patronage and Cultural Custodians</p>
+                        <p class="text-[#1A3C2A]/60 text-sm leading-relaxed mt-auto">Royal Patronage and Cultural Custodians</p>
                     </div>
                 </div>
             </div>
@@ -582,7 +606,7 @@
             <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-white/30 text-[10px] uppercase tracking-widest">&copy; 2026 ETI-OSA CARNIVAL ORGANISING COMMITTEE.</p>
                 <p class="text-white/30 text-[10px] uppercase tracking-widest text-center md:text-right max-w-md">
-                    PRODUCED BY <span class="text-white/50">MYHAVEN INTEGRATED LIMITED</span> IN CO-PRESENTATION WITH THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM.
+                    PRODUCED BY <span class="text-white/50">MYHAVEN INTEGRATED LIMITED</span> IN CO-PRESENTATION WITH THE ETI-OSA LOCAL GOVERNMENT AND LAGOS STATE MINISTRY OF TOURISM, ARTS AND CULTURE.
                 </p>
             </div>
         </div>
@@ -630,3 +654,4 @@
     </script>
 </body>
 </html>
+

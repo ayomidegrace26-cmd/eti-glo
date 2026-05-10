@@ -1,0 +1,3 @@
+I am saving the images provided by the user.
+Image 1: Lagos State Logo
+Image 2: Eti-Osa LG Seal

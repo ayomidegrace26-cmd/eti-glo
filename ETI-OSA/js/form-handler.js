@@ -23,18 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
 
             try {
-                const response = await fetch('process_form.php', {
+                const response = await fetch('submit.php', {
                     method: 'POST',
                     body: formData
                 });
 
+                console.log('Response Status:', response.status, response.statusText);
                 const rawText = await response.text();
+                console.log('Raw Text Length:', rawText.length);
+
                 let result;
                 try {
                     result = JSON.parse(rawText);
                 } catch (parseError) {
                     console.error('Raw Server Response:', rawText);
-                    const errorSnippet = rawText ? rawText.substring(0, 200) : '[Empty Response]';
+                    const errorSnippet = rawText ? rawText.substring(0, 200) : `[Empty Response - Status: ${response.status}]`;
                     throw new Error('Server returned invalid data: ' + errorSnippet);
                 }
 
